@@ -1,1 +1,14 @@
 <h2><%= @recipe.name %></h2>
+
+<p>
+  <%= link_to "Edit", edit_recipe_path(@recipe) %>
+
+<p><% image_tag @recipe.image %></p>
+
+<ul>
+  <li>Course: <%= @recipe.course %></li>
+  <li>Cook time: <%= @recipe.cooktime %></li>
+  <li>Serving Size: <%= @recipe.servingsize %></li>
+</ul>
+
+<p>Instructions: <%= @recipe.instructions %></p>

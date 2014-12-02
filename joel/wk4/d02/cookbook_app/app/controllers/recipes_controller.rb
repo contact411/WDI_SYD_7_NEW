@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :find_recipe, only: [:show, :edit]
+
   def index
     @recipes = Recipe.all
   end
@@ -17,6 +19,10 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.find params[:id]
+  end
+
+  def edit
     @recipe = Recipe.find params[:id]
   end
 
