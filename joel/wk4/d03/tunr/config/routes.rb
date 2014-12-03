@@ -1,6 +1,7 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                       Controller#Action
+#           mixtapes_index GET    /mixtapes/index(.:format)         mixtapes#index
 #              songs_index GET    /songs/index(.:format)            songs#index
 #         new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)          devise/sessions#create
@@ -36,6 +37,14 @@
 #                          PATCH  /songs/:id(.:format)              songs#update
 #                          PUT    /songs/:id(.:format)              songs#update
 #                          DELETE /songs/:id(.:format)              songs#destroy
+#                 mixtapes GET    /mixtapes(.:format)               mixtapes#index
+#                          POST   /mixtapes(.:format)               mixtapes#create
+#              new_mixtape GET    /mixtapes/new(.:format)           mixtapes#new
+#             edit_mixtape GET    /mixtapes/:id/edit(.:format)      mixtapes#edit
+#                  mixtape GET    /mixtapes/:id(.:format)           mixtapes#show
+#                          PATCH  /mixtapes/:id(.:format)           mixtapes#update
+#                          PUT    /mixtapes/:id(.:format)           mixtapes#update
+#                          DELETE /mixtapes/:id(.:format)           mixtapes#destroy
 #                     root GET    /                                 welcome#index
 #
 
