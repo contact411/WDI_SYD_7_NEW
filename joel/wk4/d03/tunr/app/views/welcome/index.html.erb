@@ -1,2 +1,9 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h2>Welcome to Tunr!</h2>
+
+<h3>Recent mixes:</h3>
+<% @mixtapes.each do |mixtape| %>
+<div class="mixtape">
+  <h3><%= mixtape.name %></h3>
+  <p><%= mixtape.description.truncate(100) %></p>
+</div>
+<% end %>
