@@ -11,10 +11,5 @@
 #  updated_at :datetime
 #
 
-require 'test_helper'
-
-class ArtistsTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Artist < ActiveRecord::Base
 end
