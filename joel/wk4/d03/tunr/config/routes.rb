@@ -33,10 +33,12 @@
 
 Rails.application.routes.draw do
 
+  get 'songs/index'
+
   devise_for :users
 
   resources :artists
-#  resources :songs
+  resources :songs
 #  resources :mixtapes
 
   root "welcome#index"
