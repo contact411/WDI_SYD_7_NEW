@@ -1,7 +1,7 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                       Controller#Action
-#            artists_index GET    /artists/index(.:format)          artists#index
+#              songs_index GET    /songs/index(.:format)            songs#index
 #         new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)          devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
@@ -28,6 +28,14 @@
 #                          PATCH  /artists/:id(.:format)            artists#update
 #                          PUT    /artists/:id(.:format)            artists#update
 #                          DELETE /artists/:id(.:format)            artists#destroy
+#                    songs GET    /songs(.:format)                  songs#index
+#                          POST   /songs(.:format)                  songs#create
+#                 new_song GET    /songs/new(.:format)              songs#new
+#                edit_song GET    /songs/:id/edit(.:format)         songs#edit
+#                     song GET    /songs/:id(.:format)              songs#show
+#                          PATCH  /songs/:id(.:format)              songs#update
+#                          PUT    /songs/:id(.:format)              songs#update
+#                          DELETE /songs/:id(.:format)              songs#destroy
 #                     root GET    /                                 welcome#index
 #
 
