@@ -32,6 +32,10 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def destroy
+    @artist.destroy
+    redirect_to artists_path
+  end
 
 private
   def find_artist
