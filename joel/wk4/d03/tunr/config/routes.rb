@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :artists
+#  resources :songs
+#  resources :mixtapes
+
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
