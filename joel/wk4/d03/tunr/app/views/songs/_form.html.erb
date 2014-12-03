@@ -17,8 +17,7 @@
   </p>
   <p>
   <%= s.label :artist_id %>
-  <%= s.number_field :artist_id %>
-  </p>
+  <%= s.collection_select :artist_id, Artist.all, :id, :name %></p>
   <p>
   <%= s.submit %>
   </p>
