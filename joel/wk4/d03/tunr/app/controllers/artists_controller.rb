@@ -9,18 +9,26 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def create
     @artist = Artist.new artist_params
     if @artist.save
       redirect_to artist_path(@artist)
     else
       render :new
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @artist.update artist_params
+      redirect_to @artist
+    else
+      render 'edit'
     end
   end
 
