@@ -5,24 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
 
-  Artist.create({
-  name: "Pearl Jam",
-  hometown: "Seattle",
-  bio: "Bonded by their flannel.. The sings songs about life and other stuff.",
-  label: "Capitol Records"
-  })
+# normal user
+User.create({
+  email: "normal@example.com",
+  password: "password",
+  password_confirmation: "password",
+  confirmed_at: Time.now
+})
 
-  Artist.create({
-  name: "Motley Crue",
-  hometown: "Los Angeles",
-  bio: "A band that sings about girls and has the hair to match... They drink.",
-  label: "Elektra Records"
-  })
+# admin
+User.create({
+  email: "admin@example.com",
+  password: "password",
+  password_confirmation: "password",
+  confirmed_at: Time.now,
+  admin: true
+})
 
-  Artist.create({
-  name: "2 Pac",
-  hometown: "Oakland",
-  bio: "This dude could rap.. A real storyteller. Believe dat!",
-  label: "Capitol Records"
-  })
+User.create({
+  email: "joelhampton@gmail.com",
+  password: "passw3rd",
+  password_confirmation: "passw3rd",
+  confirmed_at: Time.now,
+  admin: true
+})
