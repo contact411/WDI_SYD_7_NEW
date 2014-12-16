@@ -16,5 +16,6 @@ feature "ReaderListsPosts", :type => :feature do
     expect(page).to have_content("Hello World")
     expect(page).to have_content("Jane Birkin")
     expect(page).to have_content("Lorem ipsum dolar sit amet")
+    expect(page).not_to have_content("No blog posts found")
   end
 end

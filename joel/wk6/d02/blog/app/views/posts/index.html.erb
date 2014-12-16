@@ -1,3 +1,7 @@
-Hello World
-
-No blog posts found
+<% unless Post.count == 0 %>
+  <%= @post.title %>
+  <%= @post.author %>
+  <%= @post.content %>
+<% else %>
+  No blog posts found
+<% end %>
