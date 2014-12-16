@@ -1,7 +1,9 @@
 <% unless Post.count == 0 %>
-  <%= @post.title %>
-  <%= @post.author %>
-  <%= @post.content %>
+  <% @posts.each do |post| %>
+    <%= post.title %>
+    <%= post.author %>
+    <%= post.content %>
+  <% end %>
 <% else %>
-  No blog posts found
+    No blog posts found
 <% end %>
