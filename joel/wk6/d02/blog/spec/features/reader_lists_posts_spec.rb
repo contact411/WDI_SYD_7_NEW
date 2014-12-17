@@ -26,14 +26,16 @@ feature "ReaderListsPosts", :type => :feature do
           author: "Author #{n}",
           content: "Lorem ipsum #{n} dolar sit amet"
         )
-      visit '/'
     end
+
+    visit '/'
 
     (0..3).each do |n|
       expect(page).to have_content("Hello World #{n}")
       expect(page).to have_content("Author #{n}")
       expect(page).to have_content("Lorem ipsum #{n} dolar sit amet")
-      expect(page).not_to have_content("No blog posts found")
     end
+
+      expect(page).not_to have_content("No blog posts found")
   end
 end

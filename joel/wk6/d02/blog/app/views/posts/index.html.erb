@@ -3,6 +3,13 @@
     <%= post.title %>
     <%= post.author %>
     <%= post.content %>
+    <% unless post.comments.length == 0 %>
+      <%= post.comments.first.author %>
+      <%= post.comments.first.content %>
+    <% end %>
+    <%#= post.comment.author %>
+    <%#= post.comment.content %>
+
   <% end %>
 <% else %>
     No blog posts found
