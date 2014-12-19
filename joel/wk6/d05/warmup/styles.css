@@ -1,0 +1,13 @@
+body {
+  background: #DDEEF4;
+  margin: 20px 100px 1px;
+}
+
+h1 { font-family: 'Architects Daughter', cursive; 
+font-weight: 400;
+font-size: 40px; 
+}
+
+#sidebar {
+  float: right;
+}
