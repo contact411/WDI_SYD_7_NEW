@@ -14,3 +14,113 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $("body").on("click", ".todo button", function() {
+    var $todo = $(this).parent();
+    var todoID = $todo.attr("data-id");
+
+  $todo.hide();
+
+    $.ajax({
+      method: "POST",
+      url: "/todos/" + todoID,
+      dataType: "json",
+      data: {
+        _method: "DELETE"
+      },
+      success: function() {
+        $todo.remove();     
+      },
+      error: function() {
+        alert("Sorry something went wrong...");
+        $todo.show();
+      }
+    });
+  });
+
+  $("#add-todo").on("keypress", function(event) {
+    if (event.keyCode === 13 && $(this).val() !== "") {
+      $.ajax({
+        method: "POST",
+        url: "/todos",
+        dataType: "json",
+        data: {
+          todo: {
+            task: $(this).val()
+          }
+        },
+        success: function(todo) {
+          $("body").append("<p data-id=\"" + todo.id + "\" class=\"todo\">" + todo.task + "</p>");
+        }
+      });
+    }
+  });
+
+  $("body").on("click", ".todo span", function() {
+    var todoURL = "/todos/" + $(this).parent().attr("data-id");
+    // "/todos/11"
+
+    var self = this;
+
+    $.getJSON(todoURL, function(todo) {
+      $(self).append("<div>" + todo.notes + "</div>");
+    });
+  });
+
+  $.getJSON("/todos", function(todos) {
+    $.each(todos, function(index, todo) {
+      $("body").append("<p data-id=\"" + todo.id + "\" class=\"todo\"><span>" + todo.task + "</span> <button>x</button></p>");
+    });
+  });
+});
+
+
+// $(function() {
+//   $("#add-todo").on("submit", function(event) {
+//     var text = $("#todo-text").val();
+//     var notes = $("#todo-notes").val();
+//     var completed = $("#todo-completed").prop("checked");
+
+//     $.post("/todos/", { todo: 
+//       { task: text, 
+//         notes: notes, 
+//         completed: completed },
+//         _method: "PATCH" 
+//         }, 
+//         function(data) {
+//           $("body").append("<p>" + data.text + "</p>");
+//         },
+//         "json");
+
+//     $.ajax({
+//       url: "/todos",
+//       method: "POST",
+//       type: "json",
+//       data: {
+//         todo: {
+//           text: "Do the dishes",
+//           notes: "Get liquid",
+//           completed: false
+//         }
+//       },
+//       success: function(data) {
+//         console.log(data);
+//       },
+//       failure: function(data) {
+
+//       }
+//     });
+
+//     event.preventDefault();
+//   });
+// });
+
+
+
+
+
+
+
+
+

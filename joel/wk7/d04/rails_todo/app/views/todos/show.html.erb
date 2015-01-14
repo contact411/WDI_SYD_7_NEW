@@ -1,0 +1,9 @@
+<h1> Show Tasks </h1>
+
+<h2> <%= @todo.task %> </h2>
+<small><%= @todo.notes %></small>
+
+<p>
+  <%= link_to "Edit", edit_todo_path(@todo) %>
+  <%= link_to "Destroy", @todo, method: :delete, data: { confirm: 'Are you sure?'} %>
+</p>

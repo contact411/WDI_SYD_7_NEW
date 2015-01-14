@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  notes: MyText
+  completed: false
+  timestamp: 2015-01-08
+
+two:
+  task: MyString
+  notes: MyText
+  completed: false
+  timestamp: 2015-01-08
