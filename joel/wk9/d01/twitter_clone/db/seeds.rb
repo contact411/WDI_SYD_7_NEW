@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Creating some seed statuses"
+
+Status.create({
+  username: "JoelHampton",
+  content: "The weather is beautiful today.."
+})
+
+Status.create({
+  username: "CrazyGuy",
+  content: "Can't wait for tonights concert.."
+})
+
+Status.create({
+  username: "FunMaster",
+  content: "Looks like its going to rain.." 
+})
+
