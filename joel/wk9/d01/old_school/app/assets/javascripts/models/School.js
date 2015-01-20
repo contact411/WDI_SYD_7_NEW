@@ -1,5 +1,5 @@
 var School = Backbone.Model.extend({
-  urlRoot: '/schools'
+  urlRoot: '/schools',
 
   defaults: {
     name: "Back in the day HS",
