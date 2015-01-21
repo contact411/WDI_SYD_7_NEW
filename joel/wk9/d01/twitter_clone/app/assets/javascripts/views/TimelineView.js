@@ -1,11 +1,10 @@
 var TimelineView = Backbone.View.extend({
   tagName: "div",
   className: "timeline",
-  template: JST['statuses/timeline'],
 
   initialize: function() {
     this.collection.fetch();
-    this.collection.on("sync", this.render, this)
+    this.collection.on("sync", this.render, this);
   },
 
   // OLD CODE
@@ -15,10 +14,16 @@ var TimelineView = Backbone.View.extend({
   //       statuses: this.collection.toJSON()
   //     })
   //   );
+  
+  // NEWER OLD CODE
+  // render: function() {
+  //   this.collection.each(function(status) {
+  //     var statusView = new StatusView({ model: status });
+  //     this.$el.append(statusView.render().el);
+  //   }, this);
 
-  render: function() {
-    this.collection.each(function(status) {
-      new StatusView = StatusView({ model: status });
-    });
+  addStatus: function(status) {
+    var statusView = new StatusView({ model: status});
+    this.$el.append(statusView.render().el);
   }
 });
