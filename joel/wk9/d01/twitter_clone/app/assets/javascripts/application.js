@@ -18,3 +18,9 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree .
+
+var statusesCollection = new Statuses();
+
+var timelineView = new TimelineView({ collection: statusesCollection });
+
+$("body").append(timelineView.el);

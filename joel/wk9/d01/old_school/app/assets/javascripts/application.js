@@ -19,3 +19,9 @@
 //= require_tree ./views
 //= require_tree .
 
+
+var schoolsCollection = new Schools();
+
+var timelineView = new TimelineView({ collection: schoolsCollection });
+
+$("body").append(timelineView.el);
