@@ -1,9 +1,9 @@
-var TwitterCloneApp = TwitterCloneApp || {};
+var OldSchoolApp = OldSchoolApp || {};
 
-TwitterCloneApp.StatusView = Backbone.View.extend({
+OldSchoolApp.SchoolView = Backbone.View.extend({
   tagName: 'div',
-  className: 'status',
-  template: JST['statuses/status'],
+  className: 'school',
+  template: JST['schools/school'],
 
   events: {
     "click button": "toggleFav"

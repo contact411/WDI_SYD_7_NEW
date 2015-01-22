@@ -1,8 +1,10 @@
-var School = Backbone.Model.extend({
+var OldSchoolApp = OldSchoolApp || {};
+
+OldSchoolApp.School = Backbone.Model.extend({
   urlRoot: '/schools',
 
   defaults: {
-    name: "Back in the day HS",
-    description: "Free burritos..."
+    name: "Generic School",
+    description: "Free burrito provided for all students..."
   }
 });

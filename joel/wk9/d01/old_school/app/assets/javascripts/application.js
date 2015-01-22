@@ -20,8 +20,10 @@
 //= require_tree .
 
 
-var schoolsCollection = new Schools();
 
-var timelineView = new TimelineView({ collection: schoolsCollection });
+var OldSchoolApp = OldSchoolApp || {};
 
-$("body").append(timelineView.el);
+$(function() {
+  OldSchoolApp.router = new OldSchoolApp.AppRouter();
+  Backbone.history.start();
+});
